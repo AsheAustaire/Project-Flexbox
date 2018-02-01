@@ -1,0 +1,47 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.flexbox {
+  height: 250px;
+  width: 100%;
+  display: flex;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+}
+
+.box.red {
+  background: red;
+}
+
+.box.green {
+  background: green;
+}
+
+.box.purple {
+  background: purple;
+}
+
+.box.orange {
+  background: orange;
+}
+
+.box.blue {
+  background: blue;
+}
+
+.buttonContainer {
+  width: 100%;
+  height: 800px;
+  background: gray;
+}
+
+.button {
+  width: 150px;
+  height: 150px;
+  font: 30px sans-serif;
+}
