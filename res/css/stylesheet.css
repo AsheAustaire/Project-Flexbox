@@ -3,12 +3,21 @@ html, body {
   height: 100%;
 }
 
+.text-header {
+  font: 80px serif;
+  text-align: center;
+}
+
 .flexbox {
   height: 250px;
-  width: 50%;
+  width: 500px;
+  margin: 0px auto 80px;
   display: flex;
-  border: solid 5px hsl(0,0%,0%);
+  border: solid 8px hsl(0,0%,0%);
   flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
 }
 
 .button.add {
@@ -16,8 +25,8 @@ html, body {
   height: 50px;
   display: block;
   position: absolute;
-  right: 0px;
-  top: 50px;
+  right: 450px;
+  top: 170px;
 }
 
 .button.remove {
@@ -25,8 +34,8 @@ html, body {
   height: 50px;
   display: block;
   position: absolute;
-  right: 0px;
-  top: 100px;
+  right: 450px;
+  top: 260px;
 }
 
 
@@ -55,6 +64,10 @@ html, body {
   background: blue;
 }
 
+.button-menu > button {
+  height: 100px;
+  width: 100px;
+}
 
 .buttonContainer {
   width: 100%;
@@ -65,5 +78,34 @@ html, body {
 .button {
   width: 150px;
   height: 150px;
+  margin: 20px;
+  font: 15px sans-serif;
+}
+
+.button-menu {
+  display: flex;
+  border: solid 2px hsl(0,0%,0%);
   font: 30px sans-serif;
+  text-align: center;
+}
+
+.button-menu.main-button {
+width 100%;
+justify-content: center;
+border: solid 2px hsl(30,50%,40%);
+}
+
+.button-menu.sub {
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+
+.sub-button-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sub-buttons {
+  display: flex;
 }

@@ -1,20 +1,36 @@
 // CONTAINERS
-flexbox = document.body.querySelector('#flexbox')
+flexbox = document.body.querySelector('#flexbox');
 
 
 // BUTTONS
-removeBox = document.body.querySelector('#remove-box')
-addBox = document.body.querySelector('#add-box')
+removeBox = document.body.querySelector('#remove-box');
+addBox = document.body.querySelector('#add-box');
 toggleButton = document.body.querySelector('#toggle-flex');
-toggleDirection = document.body.querySelector('#toggle-direction')
-toggleReverse = document.body.querySelector('#toggle-reverse')
-toggleWrap = document.body.querySelector('#toggle-wrap')
-toggleWrapReverse = document.body.querySelector('#toggle-wrap-reverse')
+toggleDirection = document.body.querySelector('#toggle-direction');
+toggleReverse = document.body.querySelector('#toggle-reverse');
+toggleWrap = document.body.querySelector('#toggle-wrap');
+toggleWrapReverse = document.body.querySelector('#toggle-wrap-reverse');
+toggleJustStart = document.body.querySelector('#just-start');
+toggleJustEnd = document.body.querySelector('#just-end');
+toggleCenter = document.body.querySelector('#just-center');
+toggleSpaceBetween = document.body.querySelector('#just-between');
+toggleSpaceAround = document.body.querySelector('#just-around');
+toggleAlignStart = document.body.querySelector('#align-start');
+toggleAlignEnd = document.body.querySelector('#align-end');
+toggleAlignCenter = document.body.querySelector('#align-center');
+toggleAlignBaseline = document.body.querySelector('#align-baseline');
+toggleAlignStretch = document.body.querySelector('#align-stretch');
+toggleAlignContStart = document.body.querySelector('#align-cont-start');
+toggleAlignContEnd = document.body.querySelector('#align-cont-end');
+toggleAlignContCenter = document.body.querySelector('#align-cont-center');
+toggleAlignContStretch = document.body.querySelector('#align-cont-stretch');
+toggleAlignContBetween = document.body.querySelector('#align-cont-between');
+toggleAlignContAround = document.body.querySelector('#align-cont-around');
 
 // CONTENT EVENT LISTENERS //
 
 let boxCounter = 5;
-flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, '')
+flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, '');
 
 addBox.addEventListener('click', () => {
   if(boxCounter < 15){
@@ -105,6 +121,78 @@ toggleWrapReverse.addEventListener('click', () => {
   } else if (flexbox.style.flexwrap === 'wrap-reverse' ) {
     flexbox.style.flextwrap = 'wrap'
   } else {
-    
   }
+})
+
+// JUSTIFY CONTENT MENU
+
+toggleJustStart.addEventListener('click', () => {
+  console.log('test');
+  flexbox.style.justifyContent = 'flex-start'
+})
+toggleJustEnd.addEventListener('click', () => {
+  console.log('test')
+  flexbox.style.justifyContent = 'flex-end'
+})
+toggleCenter.addEventListener('click', () => {
+  console.log('test')
+  flexbox.style.justifyContent = 'center'
+})
+toggleSpaceBetween.addEventListener('click', () => {
+  console.log('test')
+  flexbox.style.justifyContent = 'space-between'
+})
+toggleSpaceAround.addEventListener('click', () => {
+  console.log('test')
+  flexbox.style.justifyContent = 'space-around'
+})
+
+// ALIGN ITEMS MENU
+
+toggleAlignStart.addEventListener('click', () => {
+  console.log('test');
+  flexbox.style.alignItems = 'flex-start'
+})
+toggleAlignEnd.addEventListener('click', () => {
+  console.log('test')
+  flexbox.style.alignItems = 'flex-end'
+})
+toggleAlignCenter.addEventListener('click', () => {
+  console.log('test')
+  flexbox.style.alignItems = 'center'
+})
+toggleAlignBaseline.addEventListener('click', () => {
+  console.log('test')
+  flexbox.style.alignItems = 'baseline'
+})
+toggleAlignStretch.addEventListener('click', () => {
+  console.log('test')
+  flexbox.style.alignItems = 'stretch'
+})
+
+// ALIGN CONTENT MENU
+
+toggleAlignContStart.addEventListener('click', () => {
+  console.log('test');
+  flexbox.style.alignContent = 'flex-start'
+})
+toggleAlignContEnd.addEventListener('click', () => {
+  console.log('test');
+  flexbox.style.alignContent = 'flex-end'
+})
+toggleAlignContCenter.addEventListener('click', () => {
+  console.log('test');
+  flexbox.style.alignContent = 'center'
+})
+toggleAlignContStretch.addEventListener('click', () => {
+  console.log('test');
+  flexbox.style.alignContent = 'stretch'
+})
+toggleAlignContBetween.addEventListener('click', () => {
+  console.log('test');
+  flexbox.style.alignContent = 'space-between'
+})
+toggleAlignContAround.addEventListener('click', () => {
+  console.log('test');
+  flexbox.style.alignContent = 'space-around'
 })
