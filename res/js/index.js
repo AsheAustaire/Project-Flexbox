@@ -33,7 +33,7 @@ let boxCounter = 5;
 flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, '');
 
 addBox.addEventListener('click', () => {
-  if(boxCounter < 15){
+  if(boxCounter < 100){
     boxCounter += 1;
     flexbox.innerHTML += addBoxHTML(boxCounter)
     console.log(boxCounter);
@@ -57,28 +57,20 @@ removeBox.addEventListener('click', () => {
 
     let color;
 
-    switch(colorId){
-      case 6 :
-      case 11 :
-        color = 'red'
-        break;
-      case 7 :
-      case 12:
-        color = 'green'
-        break;
-      case 8 :
-      case 13 :
-        color = 'blue'
-        break;
-      case 9 :
-      case 14 :
-        color = 'purple'
-        break;
-      case 10 :
-      case 15 :
-        color = 'orange'
-        break;
+    color = Math.random()
+
+    if(color > .8) {
+      color = 'red'
+    } else if(color > .6) {
+      color = 'green'
+    } else if(color > .4) {
+      color = 'blue'
+    } else if (color > .2) {
+      color = 'orange'
+    } else {
+      color = 'purple'
     }
+
     return `\n      <div id='${colorId}' class='box ${color}'></div>`
   }
 
