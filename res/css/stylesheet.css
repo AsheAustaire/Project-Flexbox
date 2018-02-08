@@ -1,16 +1,15 @@
-html, body {
+html, body, main {
   width: 100%;
-  height: 100%;
 }
 
 h1 {
-  margin-top: 10px;
+  padding-top: 10px;
   font: 50px sans-serif;
   font-weight: 900;
 }
 
 .text-header {
-  font: 80px serif;
+  font: 65px serif;
   text-align: center;
 }
 

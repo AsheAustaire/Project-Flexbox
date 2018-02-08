@@ -33,7 +33,7 @@ let boxCounter = 5;
 flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, '');
 
 addBox.addEventListener('click', () => {
-  if(boxCounter < 100){
+  if(boxCounter < 70){
     boxCounter += 1;
     flexbox.innerHTML += addBoxHTML(boxCounter)
     console.log(boxCounter);
@@ -53,6 +53,8 @@ removeBox.addEventListener('click', () => {
 
 // BOX HELPER FUNCTIONS //
 
+  let lastColor = 'orange'
+
   function addBoxHTML(colorId) {
 
     let color;
@@ -71,7 +73,12 @@ removeBox.addEventListener('click', () => {
       color = 'purple'
     }
 
-    return `\n      <div id='${colorId}' class='box ${color}'></div>`
+    if(color === lastColor) {
+      return addBoxHTML()
+    } else {
+      lastColor = color
+      return `\n      <div id='${colorId}' class='box ${color}'></div>`
+    }
   }
 
   function removeBoxHTML() {
