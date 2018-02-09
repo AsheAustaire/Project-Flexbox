@@ -27,6 +27,7 @@ toggleAlignContStretch = document.body.querySelector('#align-cont-stretch');
 toggleAlignContBetween = document.body.querySelector('#align-cont-between');
 toggleAlignContAround = document.body.querySelector('#align-cont-around');
 
+
 // CONTENT EVENT LISTENERS //
 
 let boxCounter = 5;
@@ -50,6 +51,11 @@ removeBox.addEventListener('click', () => {
     console.log('cannot remove anymore boxes');
   }
   })
+
+flexbox.addEventListener('click', (e) => {
+  e.target
+})
+
 
 // BOX HELPER FUNCTIONS //
 
@@ -77,7 +83,7 @@ removeBox.addEventListener('click', () => {
       return addBoxHTML()
     } else {
       lastColor = color
-      return `\n      <div id='${colorId}' class='box ${color}'></div>`
+      return `\n      <div id='${colorId}' class='box ${color}' tabindex="0"></div>`
     }
   }
 
