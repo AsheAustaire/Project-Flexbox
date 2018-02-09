@@ -10,8 +10,9 @@ h1 {
 
 .menu-header {
   font-size: 40px;
-  position: absolute;
+  text-align: center;
   top: 20px;
+  margin-bottom: 40px;
 }
 
 .text-header {

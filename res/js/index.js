@@ -31,6 +31,8 @@ toggleAlignContAround = document.body.querySelector('#align-cont-around');
 // CONTENT EVENT LISTENERS //
 
 let boxCounter = 5;
+let currentTarget;
+
 flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, '');
 
 addBox.addEventListener('click', () => {
@@ -53,7 +55,9 @@ removeBox.addEventListener('click', () => {
   })
 
 flexbox.addEventListener('click', (e) => {
-  e.target
+  console.log('working');
+  if(e.target.tabIndex === 0)
+  currentTarget = e.target
 })
 
 
