@@ -35,11 +35,11 @@ let currentTarget;
 
 flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, '');
 
-addBox.addEventListener('click', () => {
+addBox.addEventListener('click', (e) => {
   if(boxCounter < 70){
     boxCounter += 1;
-    flexbox.innerHTML += addBoxHTML(boxCounter)
     console.log(boxCounter);
+    console.log(flexbox.innerHTML += addBoxHTML(boxCounter));
   } else {
     console.log('cannot add more boxes');
   }
@@ -49,11 +49,13 @@ removeBox.addEventListener('click', () => {
   if(boxCounter > 5) {
     boxCounter -= 1;
     flexbox.innerHTML = removeBoxHTML()
+    lastColor = flexbox.lastElementChild.className.split(' ').pop()
   } else {
     console.log('cannot remove anymore boxes');
   }
   })
 
+  //select the flexbox item
 flexbox.addEventListener('click', (e) => {
   console.log('working');
   if(e.target.tabIndex === 0)
@@ -84,7 +86,7 @@ flexbox.addEventListener('click', (e) => {
     }
 
     if(color === lastColor) {
-      return addBoxHTML()
+      return addBoxHTML(colorId)
     } else {
       lastColor = color
       return `\n      <div id='${colorId}' class='box ${color}' tabindex="0"></div>`
@@ -97,6 +99,7 @@ flexbox.addEventListener('click', (e) => {
     let currentBoxHTML = currentBoxesArr.join('      ')
     return currentBoxHTML
   }
+
 
 // CSS EVENT LISTENERS //
 toggleButton.addEventListener('click', () => {
