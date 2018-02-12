@@ -124,6 +124,12 @@ h1 {
   text-align: center;
 }
 
+.order-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  
+}
+
 .button-menu.main-button {
   background: aliceblue;
   width 100%;

@@ -3,30 +3,51 @@ flexbox = document.body.querySelector('#flexbox');
 
 
 // BUTTONS
-removeBox = document.body.querySelector('#remove-box');
-addBox = document.body.querySelector('#add-box');
-toggleButton = document.body.querySelector('#toggle-flex');
-toggleDirection = document.body.querySelector('#toggle-direction');
-toggleReverse = document.body.querySelector('#toggle-reverse');
-toggleWrap = document.body.querySelector('#toggle-wrap');
-toggleWrapReverse = document.body.querySelector('#toggle-wrap-reverse');
-toggleJustStart = document.body.querySelector('#just-start');
-toggleJustEnd = document.body.querySelector('#just-end');
-toggleCenter = document.body.querySelector('#just-center');
-toggleSpaceBetween = document.body.querySelector('#just-between');
-toggleSpaceAround = document.body.querySelector('#just-around');
-toggleAlignStart = document.body.querySelector('#align-start');
-toggleAlignEnd = document.body.querySelector('#align-end');
-toggleAlignCenter = document.body.querySelector('#align-center');
-toggleAlignBaseline = document.body.querySelector('#align-baseline');
-toggleAlignStretch = document.body.querySelector('#align-stretch');
-toggleAlignContStart = document.body.querySelector('#align-cont-start');
-toggleAlignContEnd = document.body.querySelector('#align-cont-end');
-toggleAlignContCenter = document.body.querySelector('#align-cont-center');
-toggleAlignContStretch = document.body.querySelector('#align-cont-stretch');
-toggleAlignContBetween = document.body.querySelector('#align-cont-between');
-toggleAlignContAround = document.body.querySelector('#align-cont-around');
+const removeBox = document.body.querySelector('#remove-box');
+const addBox = document.body.querySelector('#add-box');
+const toggleButton = document.body.querySelector('#toggle-flex');
+const toggleDirection = document.body.querySelector('#toggle-direction');
+const toggleReverse = document.body.querySelector('#toggle-reverse');
+const toggleWrap = document.body.querySelector('#toggle-wrap');
+const toggleWrapReverse = document.body.querySelector('#toggle-wrap-reverse');
+const toggleJustStart = document.body.querySelector('#just-start');
+const toggleJustEnd = document.body.querySelector('#just-end');
+const toggleCenter = document.body.querySelector('#just-center');
+const toggleSpaceBetween = document.body.querySelector('#just-between');
+const toggleSpaceAround = document.body.querySelector('#just-around');
+const toggleAlignStart = document.body.querySelector('#align-start');
+const toggleAlignEnd = document.body.querySelector('#align-end');
+const toggleAlignCenter = document.body.querySelector('#align-center');
+const toggleAlignBaseline = document.body.querySelector('#align-baseline');
+const toggleAlignStretch = document.body.querySelector('#align-stretch');
+const toggleAlignContStart = document.body.querySelector('#align-cont-start');
+const toggleAlignContEnd = document.body.querySelector('#align-cont-end');
+const toggleAlignContCenter = document.body.querySelector('#align-cont-center');
+const toggleAlignContStretch = document.body.querySelector('#align-cont-stretch');
+const toggleAlignContBetween = document.body.querySelector('#align-cont-between');
+const toggleAlignContAround = document.body.querySelector('#align-cont-around');
+const orderInput = document.body.querySelector('#order-input')
+const orderSubmit = document.body.querySelector('#order-submit')
 
+// I have changed the way I want to organize my selected items.
+
+const alignItems = {
+  'start' : document.body.querySelector('#align-self-start'),
+  'end' : document.body.querySelector('#align-self-end'),
+  'center' : document.body.querySelector('#align-self-center'),
+  'baseline' : document.body.querySelector('#align-self-baseline'),
+  'stretch' : document.body.querySelector('#align-self-stretch'),
+}
+
+const flexGrow = {
+  'submit' : document.body.querySelector('#grow-submit'),
+  'input' : document.body.querySelector('#grow-input')
+}
+
+const flexShrink = {
+  'submit' : document.body.querySelector('#shrink-submit'),
+  'input' : document.body.querySelector('#shrink-input')
+}
 
 // CONTENT EVENT LISTENERS //
 
@@ -57,7 +78,6 @@ removeBox.addEventListener('click', () => {
 
   //select the flexbox item
 flexbox.addEventListener('click', (e) => {
-  console.log('working');
   if(e.target.tabIndex === 0)
   currentTarget = e.target
 })
@@ -89,7 +109,7 @@ flexbox.addEventListener('click', (e) => {
       return addBoxHTML(colorId)
     } else {
       lastColor = color
-      return `\n      <div id='${colorId}' class='box ${color}' tabindex="0"></div>`
+      return `\n      <div id='box${colorId}' class='box ${color}' tabindex="0"></div>`
     }
   }
 
@@ -207,4 +227,40 @@ toggleAlignContBetween.addEventListener('click', () => {
 toggleAlignContAround.addEventListener('click', () => {
   console.log('test');
   flexbox.style.alignContent = 'space-around'
+})
+
+// ORDER MENU
+
+orderSubmit.addEventListener('click', (e) => {
+  console.log(e.target.value);
+  currentTarget.style.order = parseInt(orderInput.value) ;
+})
+
+// ALIGN SELF MENU
+
+alignItems.start.addEventListener('click', () => {
+  currentTarget.style.alignSelf = 'flex-start';
+})
+alignItems.end.addEventListener('click', () => {
+  currentTarget.style.alignSelf = 'flex-end';
+})
+alignItems.center.addEventListener('click', () => {
+  currentTarget.style.alignSelf = 'center';
+})
+alignItems.baseline.addEventListener('click', () => {
+  currentTarget.style.alignSelf = 'baseline';
+})
+alignItems.stretch.addEventListener('click', () => {
+  currentTarget.style.alignSelf = 'stretch';
+})
+
+// FLEX GROW AND SHRINK MENU
+
+flexGrow.submit.addEventListener('click', () => {
+  currentTarget.style.flexGrow = flexGrow.input.value
+})
+
+
+flexShrink.submit.addEventListener('click', () => {
+  currentTarget.style.flexShrink = flexShrink.input.value
 })
