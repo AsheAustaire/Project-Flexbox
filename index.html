@@ -7,6 +7,14 @@
   </head>
   <body>
     <header>
+      <div id='flex-properties-active' class='border-box'>
+        <p id='text-display' class='flex-declaration'>display : flex</p>
+        <p id='text-wrap' class='flex-declaration'>flex-wrap : nowrap</p>
+        <p id='text-direction' class='flex-declaration'>flex-direction : row</p>
+        <p id='text-justify-content' class='flex-declaration'>justify-content : flex-start</p>
+        <p id='text-align-items' class='flex-declaration'>align-items : flex-start</p>
+        <p id='text-align-content' class='flex-declaration'>align-content : stretch</p>
+      </div>
       <h1 class='text-header'>FLEXBOX</h1>
     </header>
     <main>
@@ -97,11 +105,14 @@
                 <div class='button-menu sub'>
                   <h1>Flex Grow & Flex Shrink</h1>
                   <section class='sub-buttons'>
+                    <p>Flex Basis</p>
+                    <input id='basis-input' type="text" name="basis" value="">
+                  <button id='basis-submit' type='button' name='button'>submit</button>
                     <p>Flex Grow</p>
                     <input id='grow-input' type="text" name="grow" value="">
                   <button id='grow-submit' type='button' name='button'>submit</button>
                   <p>Flex Shrink</p>
-                  <input id='shrink-input' type="text" name="grow" value="">
+                  <input id='shrink-input' type="text" name="shrink" value="">
                 <button id='shrink-submit' type='button' name='button'>submit</button>
                   </section>
                 </div>

@@ -49,6 +49,21 @@ const flexShrink = {
   'input' : document.body.querySelector('#shrink-input')
 }
 
+const flexBasis = {
+  'submit' : document.body.querySelector('#basis-submit'),
+  'input' : document.body.querySelector('#basis-input')
+}
+
+const flexText = {
+  'display': document.body.querySelector('#text-display'),
+  'wrap': document.body.querySelector('#text-wrap'),
+  'direction': document.body.querySelector('#text-direction'),
+  'justifyContent': document.body.querySelector('#text-justify-content'),
+  'alignItems': document.body.querySelector('#text-align-items'),
+  'alignContent': document.body.querySelector('#text-align-content'),
+}
+
+
 // CONTENT EVENT LISTENERS //
 
 let boxCounter = 5;
@@ -59,8 +74,7 @@ flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, '');
 addBox.addEventListener('click', (e) => {
   if(boxCounter < 70){
     boxCounter += 1;
-    console.log(boxCounter);
-    console.log(flexbox.innerHTML += addBoxHTML(boxCounter));
+    flexbox.innerHTML += addBoxHTML(boxCounter);
   } else {
     console.log('cannot add more boxes');
   }
@@ -83,7 +97,7 @@ flexbox.addEventListener('click', (e) => {
 })
 
 
-// BOX HELPER FUNCTIONS //
+// FLEX-BOX HELPER FUNCTIONS //
 
   let lastColor = 'orange'
 
@@ -121,26 +135,48 @@ flexbox.addEventListener('click', (e) => {
   }
 
 
+
 // CSS EVENT LISTENERS //
 toggleButton.addEventListener('click', () => {
-  flexbox.style.display === 'block' ? flexbox.style.display = 'flex' : flexbox.style.display = 'block';
+  if(flexbox.style.display === 'block') {
+    flexbox.style.display = 'flex'
+    flexText.display.innerText = 'display : flex'
+  } else {
+    flexbox.style.display = 'block';
+    flexText.display.innerText = 'display : block'
+  }
+
+
 })
 
 toggleDirection.addEventListener('click', () => {
-  flexbox.style.flexDirection === 'column' ? flexbox.style.flexDirection = 'row' : flexbox.style.flexDirection = 'column';
+  if(flexbox.style.flexDirection === 'column') {
+    flexbox.style.flexDirection = 'row'
+    flexText.direction.innerText = 'flex-direction : row'
+  } else {
+    flexbox.style.flexDirection = 'column'
+    flexText.direction.innerText = 'flex-direction : column'
+  }
 })
 
 toggleReverse.addEventListener('click', () => {
   if(flexbox.style.flexDirection === 'row' || flexbox.style.flexDirection === 'row-reverse' || flexbox.style.flexDirection === '') {
-    flexbox.style.flexDirection === 'row' ? flexbox.style.flexDirection = 'row-reverse' : flexbox.style.flexDirection = 'row';
+    flexbox.style.flexDirection === 'row-reverse' ? flexbox.style.flexDirection = 'row' : flexbox.style.flexDirection = 'row-reverse';
+    flexText.direction.innerText === 'flex-direction : row' ? flexText.direction.innerText = 'flex-direction : row-reverse' : flexText.direction.innerText = 'flex-direction : row'
   } else {
     flexbox.style.flexDirection === 'column' ? flexbox.style.flexDirection = 'column-reverse' : flexbox.style.flexDirection = 'column';
+    flexText.direction.innerText === 'flex-direction : column' ? flexText.direction.innerText = 'flex-direction : column-reverse' : flexText.direction.innerText = 'flex-direction : column'
   }
 })
 
 toggleWrap.addEventListener('click', () => {
-  console.log(flexbox.style.flexWrap);
-  flexbox.style.flexWrap === 'wrap' ? flexbox.style.flexWrap = 'nowrap' : flexbox.style.flexWrap = 'wrap';
+  if(flexbox.style.flexWrap === 'wrap') {
+    flexbox.style.flexWrap = 'nowrap'
+    flexText.wrap.innerText = 'flex-wrap : nowrap'
+  } else {
+    flexbox.style.flexWrap = 'wrap'
+    flexText.wrap.innerText = 'flex-wrap : wrap'
+  }
 })
 
 toggleWrapReverse.addEventListener('click', () => {
@@ -159,74 +195,74 @@ toggleWrapReverse.addEventListener('click', () => {
 // JUSTIFY CONTENT MENU
 
 toggleJustStart.addEventListener('click', () => {
-  console.log('test');
   flexbox.style.justifyContent = 'flex-start'
+  flexText.justifyContent.innerText = 'justify-content : flex-start'
 })
 toggleJustEnd.addEventListener('click', () => {
-  console.log('test')
   flexbox.style.justifyContent = 'flex-end'
+  flexText.justifyContent.innerText = 'justify-content : flex-end'
 })
 toggleCenter.addEventListener('click', () => {
-  console.log('test')
   flexbox.style.justifyContent = 'center'
+  flexText.justifyContent.innerText = 'justify-content : center'
 })
 toggleSpaceBetween.addEventListener('click', () => {
-  console.log('test')
   flexbox.style.justifyContent = 'space-between'
+  flexText.justifyContent.innerText = 'justify-content : space-between'
 })
 toggleSpaceAround.addEventListener('click', () => {
-  console.log('test')
   flexbox.style.justifyContent = 'space-around'
+  flexText.justifyContent.innerText = 'justify-content : space-around'
 })
 
 // ALIGN ITEMS MENU
 
 toggleAlignStart.addEventListener('click', () => {
-  console.log('test');
   flexbox.style.alignItems = 'flex-start'
+  flexText.alignItems.innerText = 'align-items : flex-start'
 })
 toggleAlignEnd.addEventListener('click', () => {
-  console.log('test')
   flexbox.style.alignItems = 'flex-end'
+  flexText.alignItems.innerText = 'align-items : flex-end'
 })
 toggleAlignCenter.addEventListener('click', () => {
-  console.log('test')
   flexbox.style.alignItems = 'center'
+  flexText.alignItems.innerText = 'align-items : center'
 })
 toggleAlignBaseline.addEventListener('click', () => {
-  console.log('test')
   flexbox.style.alignItems = 'baseline'
+  flexText.alignItems.innerText = 'align-items : baseline'
 })
 toggleAlignStretch.addEventListener('click', () => {
-  console.log('test')
   flexbox.style.alignItems = 'stretch'
+  flexText.alignItems.innerText = 'align-items : stretch'
 })
 
 // ALIGN CONTENT MENU
 
 toggleAlignContStart.addEventListener('click', () => {
-  console.log('test');
   flexbox.style.alignContent = 'flex-start'
+  flexText.alignContent.innerText = 'align-content : flex-start'
 })
 toggleAlignContEnd.addEventListener('click', () => {
-  console.log('test');
   flexbox.style.alignContent = 'flex-end'
+  flexText.alignContent.innerText = 'align-content : flex-end'
 })
 toggleAlignContCenter.addEventListener('click', () => {
-  console.log('test');
   flexbox.style.alignContent = 'center'
+  flexText.alignContent.innerText = 'align-content : center'
 })
 toggleAlignContStretch.addEventListener('click', () => {
-  console.log('test');
   flexbox.style.alignContent = 'stretch'
+  flexText.alignContent.innerText = 'align-content : stretch'
 })
 toggleAlignContBetween.addEventListener('click', () => {
-  console.log('test');
   flexbox.style.alignContent = 'space-between'
+  flexText.alignContent.innerText = 'align-content : space-between'
 })
 toggleAlignContAround.addEventListener('click', () => {
-  console.log('test');
   flexbox.style.alignContent = 'space-around'
+  flexText.alignContent.innerText = 'align-content : space-around'
 })
 
 // ORDER MENU
@@ -254,7 +290,7 @@ alignItems.stretch.addEventListener('click', () => {
   currentTarget.style.alignSelf = 'stretch';
 })
 
-// FLEX GROW AND SHRINK MENU
+// FLEX GROW AND SHRINK AND BASIS MENU
 
 flexGrow.submit.addEventListener('click', () => {
   currentTarget.style.flexGrow = flexGrow.input.value
@@ -263,4 +299,8 @@ flexGrow.submit.addEventListener('click', () => {
 
 flexShrink.submit.addEventListener('click', () => {
   currentTarget.style.flexShrink = flexShrink.input.value
+})
+
+flexBasis.submit.addEventListener('click', () => {
+  currentTarget.style.flexBasis = flexBasis.input.value
 })
