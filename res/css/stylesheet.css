@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:700|Poppins:400,600');
+
 
 html, body, main {
   width: 100%;
@@ -8,23 +9,58 @@ h1 {
   padding-top: 10px;
   font: 50px sans-serif;
   font-weight: 900;
-
 }
 
+.text-header {
+  font: 60px Poppins;
+  text-align: center;
+  margin-bottom: -35px;
+  margin-top: -30px;
+}
+
+  .main-label {
+  padding-top: 20px;
+  font: 32px sans-serif;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  height: 850px;
+  padding-top: 50px;
+  position: relative;
+}
+
+.flex-text {
+  font-weight: 600;
+}
 
 .border-box {
-  width: 300px;
-  height: 300px;
+  width: 690px;
+  height: 100px;
+  margin: auto;
   display: flex;
   flex-flow: column wrap;
-  position: absolute;
-  top: 100px;
-  left: 60px;
-  font: 20px 'Josefin Slab'
+  position: relative;
+  top: 28px;
+  font: 20px 'Josefin Slab';
+}
+
+.flex-display-buttons {
+  width: 100px
+  height: 300px;
+}
+
+.flex-text-wrapper {
+  width: 920px;
+  height: 200px;
+  margin: 145px auto;
+  border: solid 2px hsl(0, 0%, 0%);
 }
 
 .border-box > p {
   margin: 10px 0px;
+
 }
 
 .menu-header {
@@ -34,10 +70,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-.text-header {
-  font: 65px serif;
-  text-align: center;
-}
+
 
 .flex-display {
   width: 800px;
@@ -47,9 +80,9 @@ h1 {
 }
 
 .flexbox {
-  height: 250px;
-  width: 500px;
-  margin: 0px auto 80px;
+  height: 370px;
+  width: 640px;
+  margin: 65px auto 80px;
   display: flex;
   border: solid 8px hsl(0,0%,0%);
   flex-wrap: nowrap;
@@ -64,8 +97,8 @@ h1 {
   height: 50px;
   display: block;
   position: absolute;
-  right: 0px;
-  top: 45px;
+  right: -10px;
+  top: -9px;
   border: solid 5px hsl(0,0%,0%);
 }
 
@@ -74,15 +107,15 @@ h1 {
   height: 50px;
   display: block;
   position: absolute;
-  right: 0px;
-  top: 130px;
+  right: -10px;
+  top: 50px;
   border: solid 5px hsl(0,0%,0%);
 }
 
 
 .box {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   box-sizing: border-box;
 }
 
