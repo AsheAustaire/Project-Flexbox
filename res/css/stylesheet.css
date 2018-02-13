@@ -112,6 +112,11 @@ header {
   border: solid 5px hsl(0,0%,0%);
 }
 
+.css-display-button {
+  width: 10px;
+  height: 10px;
+  background: hsl(0,50%,50%)
+}
 
 .box {
   width: 75px;

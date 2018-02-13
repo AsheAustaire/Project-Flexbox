@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel='stylesheet' href='https://nackloose.com/reset.css' />
     <link rel='stylesheet' href='res/css/stylesheet.css' />
+    <link rel='stylesheet' href='res/css/slider.css'/ />
   </head>
   <body>
     <header>
@@ -22,14 +23,28 @@
         </section>
       </section>
       <section class='flex-text-wrapper'>
-        <h1 class='main-label'>Active CSS Properties</h1>
-        <div id='flex-properties-active' class='border-box'>
-          <p id='text-display' class='flex-declaration'>display : flex</p>
-          <p id='text-wrap' class='flex-declaration'>flex-wrap : nowrap</p>
-          <p id='text-direction' class='flex-declaration'>flex-direction : row</p>
-          <p id='text-justify-content' class='flex-declaration'>justify-content : flex-start</p>
-          <p id='text-align-items' class='flex-declaration'>align-items : flex-start</p>
-          <p id='text-align-content' class='flex-declaration'>align-content : stretch</p>
+        <h1 class='main-label'>Active Flex-Container Properties</h1>
+        <div id='flex-properties' class='border-box'>
+          <section class='text-tile'>
+            <button id='button-display' class='css-display-button'></button>
+            <p id='text-display' class='flex-declaration'>display : flex</p>
+          </section>
+          <section class='text-tile'>
+            <button id='button-flex-direction' class='css-display-button'></button>
+            <p id='text-flex-direction' class='flex-declaration'>flex-direction : row</p>
+          </section>
+          <section class='text-tile'>
+            <button id='button-justify-content' class='css-display-button'></button>
+            <p id='text-justify-content' class='flex-declaration'>justify-content : flex-start</p>
+          </section>
+          <section class='text-tile'>
+            <button id='button-display' class='css-display-button'></button>
+            <p id='text-align-items' class='flex-declaration'>align-items : flex-start</p>
+          </section>
+          <section class='text-tile'>
+            <button id='button-display' class='css-display-button'></button>
+            <p id='text-align-content' class='flex-declaration'>align-content : stretch</p>
+          </section>
         </div>
       </section>
     </header>
@@ -38,11 +53,10 @@
         <h1 class='menu-header'>Flex-Box Properties</h1>
          <section>
            <div class='button-menu main-button'>
-             <button id='toggle-flex'class='button' type="button">Toggle FlexBox</button>
-             <button id='toggle-direction'class='button' type="button">Toggle Flex Direction</button>
-             <button id='toggle-reverse'class='button' type="button">Toggle Reverse</button>
-             <button id='toggle-wrap'class='button' type="button">Toggle <br />Wrap</button>
-             <button id='toggle-wrap-reverse'class='button' type="button">Toggle Wrap Reverse</button>
+             <button id='button-flex-direction'class='button' type="button">Toggle Flex Direction</button>
+             <button id='button-toggle-reverse'class='button' type="button">Toggle Reverse</button>
+             <button id='button-flex-wrap'class='button' type="button">Toggle <br />Wrap</button>
+             <button id='button-flex-wrap-reverse'class='button' type="button">Toggle Wrap Reverse</button>
            </div>
          </section>
            <section class='sub-button-wrapper'>
@@ -81,7 +95,7 @@
            <h1 class='menu-header'>Flex-Item Properties</h1>
             <section>
               <div class='button-menu main-button'>
-                <button id='toggle-flex'class='button' type="button">Toggle FlexBox</button>
+                <button id='button-display'class='button' type="button">Toggle FlexBox</button>
               </div>
             </section>
               <section class='sub-button-wrapper'>

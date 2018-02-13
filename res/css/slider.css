@@ -1,0 +1,28 @@
+.inner {
+  width: 25%;
+  height: 100%;
+  background: hsl(0,50%,50%);
+  position: relative
+}
+
+.inner:after {
+  display: block;
+  content: '';
+  width: 50px;
+  height: 100%;
+  border-radius: 50%;
+  background: hsl(0,0%,0%);
+  position: absolute;
+  right:-25px;
+}
+
+.wrapper {
+  height: 50px;
+  width: 50%;
+  margin: auto;
+  margin-top: 100px;
+  background: #eee;
+  border: solid 1px #ccc;
+  border-radius: 25px;
+  overflow: hidden;
+}

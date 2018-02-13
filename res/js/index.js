@@ -5,16 +5,11 @@ flexbox = document.body.querySelector('#flexbox');
 // BUTTONS
 const removeBox = document.body.querySelector('#remove-box');
 const addBox = document.body.querySelector('#add-box');
-const toggleButton = document.body.querySelector('#toggle-flex');
-const toggleDirection = document.body.querySelector('#toggle-direction');
-const toggleReverse = document.body.querySelector('#toggle-reverse');
-const toggleWrap = document.body.querySelector('#toggle-wrap');
-const toggleWrapReverse = document.body.querySelector('#toggle-wrap-reverse');
-const toggleJustStart = document.body.querySelector('#just-start');
-const toggleJustEnd = document.body.querySelector('#just-end');
-const toggleCenter = document.body.querySelector('#just-center');
-const toggleSpaceBetween = document.body.querySelector('#just-between');
-const toggleSpaceAround = document.body.querySelector('#just-around');
+const toggleButton = document.body.querySelector('#button-display');
+const toggleDirection = document.body.querySelector('#button-flex-direction');
+const toggleReverse = document.body.querySelector('#button-toggle-reverse');
+const toggleWrap = document.body.querySelector('#button-flex-wrap');
+const toggleWrapReverse = document.body.querySelector('#button-flex-wrap-reverse');
 const toggleAlignStart = document.body.querySelector('#align-start');
 const toggleAlignEnd = document.body.querySelector('#align-end');
 const toggleAlignCenter = document.body.querySelector('#align-center');
@@ -30,6 +25,10 @@ const orderInput = document.body.querySelector('#order-input')
 const orderSubmit = document.body.querySelector('#order-submit')
 
 // I have changed the way I want to organize my selected items.
+
+const justifyContent = {
+  toggle: document.body.querySelector('#button-justify-content')
+}
 
 const alignItems = {
   'start' : document.body.querySelector('#align-self-start'),
@@ -57,7 +56,7 @@ const flexBasis = {
 const flexText = {
   'display': document.body.querySelector('#text-display'),
   'wrap': document.body.querySelector('#text-wrap'),
-  'direction': document.body.querySelector('#text-direction'),
+  'direction': document.body.querySelector('#text-flex-direction'),
   'justifyContent': document.body.querySelector('#text-justify-content'),
   'alignItems': document.body.querySelector('#text-align-items'),
   'alignContent': document.body.querySelector('#text-align-content'),
@@ -194,27 +193,48 @@ toggleWrapReverse.addEventListener('click', () => {
 
 // JUSTIFY CONTENT MENU
 
-toggleJustStart.addEventListener('click', () => {
-  flexbox.style.justifyContent = 'flex-start'
-  flexText.justifyContent.innerText = 'justify-content : flex-start'
-})
-toggleJustEnd.addEventListener('click', () => {
-  flexbox.style.justifyContent = 'flex-end'
-  flexText.justifyContent.innerText = 'justify-content : flex-end'
-})
-toggleCenter.addEventListener('click', () => {
-  flexbox.style.justifyContent = 'center'
-  flexText.justifyContent.innerText = 'justify-content : center'
-})
-toggleSpaceBetween.addEventListener('click', () => {
-  flexbox.style.justifyContent = 'space-between'
-  flexText.justifyContent.innerText = 'justify-content : space-between'
-})
-toggleSpaceAround.addEventListener('click', () => {
-  flexbox.style.justifyContent = 'space-around'
-  flexText.justifyContent.innerText = 'justify-content : space-around'
+justifyContent.toggle.addEventListener('click', () => {
+  justifyContentCycle()
 })
 
+  let jCounter = 0
+
+function justifyContentCycle() {
+  switch(jCounter) {
+    case 0:
+      flexbox.style.justifyContent = 'flex-start'
+      flexText.justifyContent.innerText = 'justify-content : flex-start'
+      console.log(jCounter);
+      jCounter += 1
+      console.log(jCounter);
+      break;
+    case 1:
+      flexbox.style.justifyContent = 'flex-end'
+      flexText.justifyContent.innerText = 'justify-content : flex-end'
+      console.log(jCounter);
+      jCounter += 1
+      break;
+    case 2:
+      flexbox.style.justifyContent = 'center'
+      flexText.justifyContent.innerText = 'justify-content : center'
+      console.log(jCounter);
+      jCounter += 1
+      break;
+    case 3:
+      flexbox.style.justifyContent = 'space-between'
+      flexText.justifyContent.innerText = 'justify-content : space-between'
+      console.log(jCounter);
+      jCounter += 1
+      break;
+    case 4:
+      flexbox.style.justifyContent = 'space-around'
+      flexText.justifyContent.innerText = 'justify-content : space-around'
+      console.log(jCounter);
+      jCounter += 1
+      break;
+  }
+  (jCounter === 5) ? jCounter = 0 : false
+}
 // ALIGN ITEMS MENU
 
 toggleAlignStart.addEventListener('click', () => {
