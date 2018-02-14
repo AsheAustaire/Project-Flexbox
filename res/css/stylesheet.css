@@ -59,18 +59,36 @@ header {
   height: 200px;
   margin: 66px auto;
   display: flex;
-  border: solid 6px hsl(0, 0%, 0%);
+  border: solid 5px hsl(0, 0%, 0%);
   justify-content: center;
   align-items: center;
 }
 
 .flex-text-wrapper.items {
-  width: 100px;
-  height: 100px;
+  width: 180px;
+  height: 376px;
   margin: 0;
-  position: relative;
-  bottom: 0;
-  right: 0;
+  position: absolute;
+  top: 0;
+  right: -280px;
+}
+
+.flex-text-wrapper.items.slider {
+  width: 3px;
+  height: 255px;
+  margin: 0;
+  position: absolute;
+  top: 272px;
+  right: 182px;
+}
+
+.flex-text-wrapper.items.random {
+  width: 3px;
+  height: 255px;
+  margin: 0;
+  position: absolute;
+  top: 272px;
+  right: 182px;
 }
 
 .border-box > p {
