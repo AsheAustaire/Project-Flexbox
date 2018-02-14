@@ -1,92 +1,25 @@
-// CONTAINERS
-flexbox = document.body.querySelector('#flexbox');
 
+flexbox = document.body.querySelector('#flexbox'); //Main FlexBox
 
-// BUTTONS
-const removeBox = document.body.querySelector('#remove-box');
-const addBox = document.body.querySelector('#add-box');
-const toggleButton = document.body.querySelector('#button-display');
-const toggleDirection = document.body.querySelector('#button-flex-direction');
-const toggleReverse = document.body.querySelector('#button-toggle-reverse');
-const toggleWrapReverse = document.body.querySelector('#button-flex-wrap-reverse');
-const toggleAlignContStart = document.body.querySelector('#align-cont-start');
-const toggleAlignContEnd = document.body.querySelector('#align-cont-end');
-const toggleAlignContCenter = document.body.querySelector('#align-cont-center');
-const toggleAlignContStretch = document.body.querySelector('#align-cont-stretch');
-const toggleAlignContBetween = document.body.querySelector('#align-cont-between');
-const toggleAlignContAround = document.body.querySelector('#align-cont-around');
-const orderInput = document.body.querySelector('#order-input')
-const orderSubmit = document.body.querySelector('#order-submit')
+//===========================================
+//===========================================
+// FLEX-BOX TOOLS
+//===========================================
+//===========================================
 
-// I have changed the way I want to organize my selected items.
+// FLEX-BOX SQUARE ELEMENTS
 
-const displayObj = {
-  'toggle': document.body.querySelector('#button-display'),
-  'textDisplay': document.body.querySelector('#text-display'),
-  'counter': 1
+const boxTools = {
+  removeBox: document.body.querySelector('#remove-box'),
+  addBox: document.body.querySelector('#add-box')
 }
-
-const flexDirectionObj = {
-  'toggle': document.body.querySelector('#button-flex-direction'),
-  'textDisplay': document.body.querySelector('#text-flex-direction'),
-  'counter': 1
-}
-
-const flexWrapObj = {
-  'toggle': document.body.querySelector('#button-flex-wrap'),
-  'textDisplay': document.body.querySelector('#text-flex-wrap'),
-  'counter': 1
-}
-
-const justifyContentObj = {
-  'toggle': document.body.querySelector('#button-justify-content'),
-  'textDisplay': document.body.querySelector('#text-justify-content'),
-  'counter': 1
-}
-
-const alignItemsObj = {
-  'toggle': document.body.querySelector('#button-align-items'),
-  'textDisplay': document.body.querySelector('#text-align-items'),
-  'counter': 1
-}
-
-const alignContentObj = {
-  'toggle': document.body.querySelector('#button-align-content'),
-  'textDisplay': document.body.querySelector('#text-align-content'),
-  'counter': 1
-}
-
-const alignItemObj = {
-  'start' : document.body.querySelector('#align-self-start'),
-  'end' : document.body.querySelector('#align-self-end'),
-  'center' : document.body.querySelector('#align-self-center'),
-  'baseline' : document.body.querySelector('#align-self-baseline'),
-  'stretch' : document.body.querySelector('#align-self-stretch'),
-}
-
-const flexGrowObj= {
-  'submit' : document.body.querySelector('#grow-submit'),
-  'input' : document.body.querySelector('#grow-input')
-}
-
-const flexShrinkObj = {
-  'submit' : document.body.querySelector('#shrink-submit'),
-  'input' : document.body.querySelector('#shrink-input')
-}
-
-const flexBasisObj = {
-  'submit' : document.body.querySelector('#basis-submit'),
-  'input' : document.body.querySelector('#basis-input')
-}
-
-// CONTENT EVENT LISTENERS //
 
 let boxCounter = 5;
-let currentTarget;
+let currentTarget = 'none';
 
-flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, '');
+flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, ''); // White Space Fix
 
-addBox.addEventListener('click', (e) => {
+boxTools.addBox.addEventListener('click', (e) => {
   if(boxCounter < 70){
     boxCounter += 1;
     flexbox.innerHTML += addBoxHTML(boxCounter);
@@ -95,7 +28,7 @@ addBox.addEventListener('click', (e) => {
   }
 })
 
-removeBox.addEventListener('click', () => {
+boxTools.removeBox.addEventListener('click', () => {
   if(boxCounter > 5) {
     boxCounter -= 1;
     flexbox.innerHTML = removeBoxHTML()
@@ -149,13 +82,89 @@ flexbox.addEventListener('click', (e) => {
     return currentBoxHTML
   }
 
-// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++\
-// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
-// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
-// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
-// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
-// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
-// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
+//===========================================
+//===========================================
+// OBJECTUALIZED FLEX-CONTAINER
+//===========================================
+//===========================================
+
+const displayObj = {
+  'toggle': document.body.querySelector('#button-display'),
+  'textDisplay': document.body.querySelector('#text-display'),
+  'counter': 1
+}
+
+const flexDirectionObj = {
+  'toggle': document.body.querySelector('#button-flex-direction'),
+  'textDisplay': document.body.querySelector('#text-flex-direction'),
+  'counter': 1
+}
+
+const flexWrapObj = {
+  'toggle': document.body.querySelector('#button-flex-wrap'),
+  'textDisplay': document.body.querySelector('#text-flex-wrap'),
+  'counter': 1
+}
+
+const justifyContentObj = {
+  'toggle': document.body.querySelector('#button-justify-content'),
+  'textDisplay': document.body.querySelector('#text-justify-content'),
+  'counter': 1
+}
+
+const alignItemsObj = {
+  'toggle': document.body.querySelector('#button-align-items'),
+  'textDisplay': document.body.querySelector('#text-align-items'),
+  'counter': 1
+}
+
+const alignContentObj = {
+  'toggle': document.body.querySelector('#button-align-content'),
+  'textDisplay': document.body.querySelector('#text-align-content'),
+  'counter': 1
+}
+
+//===========================================
+//===========================================
+// OBJECTUALIZED FLEX-ITEM
+//===========================================
+//===========================================
+
+const order = {
+    'orderInput': document.body.querySelector('#order-input'),
+    'orderSubmit': document.body.querySelector('#order-submit')
+}
+
+const alignItemObj = {
+  'start' : document.body.querySelector('#align-self-start'),
+  'end' : document.body.querySelector('#align-self-end'),
+  'center' : document.body.querySelector('#align-self-center'),
+  'baseline' : document.body.querySelector('#align-self-baseline'),
+  'stretch' : document.body.querySelector('#align-self-stretch'),
+}
+
+const flexGrowObj= {
+  'submit' : document.body.querySelector('#grow-submit'),
+  'input' : document.body.querySelector('#grow-input')
+}
+
+const flexShrinkObj = {
+  'submit' : document.body.querySelector('#shrink-submit'),
+  'input' : document.body.querySelector('#shrink-input')
+}
+
+const flexBasisObj = {
+  'submit' : document.body.querySelector('#basis-submit'),
+  'input' : document.body.querySelector('#basis-input')
+}
+
+
+//===========================================
+//===========================================
+// FLEX-CONTAINER EVENTS
+//===========================================
+//===========================================
+
 
 // FLEX DISPLAY
 displayObj.toggle.addEventListener('click', () => {
@@ -265,7 +274,7 @@ function alignItemsCycle() {
   alignItemsObj.textDisplay.innerText = `align-items : ${flexbox.style.alignItems}`;
   (alignItemsObj.counter === 5) ? alignItemsObj.counter = 0 : false;
 }
-// ALIGN CONTENT MENU
+// ALIGN CONTENT
 
 alignContentObj.toggle.addEventListener('click', () => {
   alignContentCycle()
@@ -303,11 +312,19 @@ function alignContentCycle() {
   alignContentObj.textDisplay.innerText = `align-content : ${flexbox.style.alignContent}`;
   alignContentObj.counter === 6 ? alignContentObj.counter = 0 : false;
 }
+
+//===========================================
+//===========================================
+// FLEX-ITEM EVENTS
+//===========================================
+//===========================================
+
+
 // ORDER MENU
 
-orderSubmit.addEventListener('click', (e) => {
+order.orderSubmit.addEventListener('click', (e) => {
   console.log(e.target.value);
-  currentTarget.style.order = parseInt(orderInput.value) ;
+  currentTarget.style.order = parseInt(order.orderInput.value) ;
 })
 
 // ALIGN SELF MENU
