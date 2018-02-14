@@ -35,14 +35,17 @@ header {
   font-weight: 600;
 }
 
+.text-tile {
+  display: flex;
+  align-items: center;
+  padding: 0px
+}
+
 .border-box {
   width: 690px;
-  height: 100px;
-  margin: auto;
+  height: 42px;
   display: flex;
   flex-flow: column wrap;
-  position: relative;
-  top: 28px;
   font: 20px 'Josefin Slab';
 }
 
@@ -52,10 +55,22 @@ header {
 }
 
 .flex-text-wrapper {
-  width: 640px;
+  width: 750px;
   height: 200px;
-  margin: 145px auto;
-  border: solid 2px hsl(0, 0%, 0%);
+  margin: 66px auto;
+  display: flex;
+  border: solid 6px hsl(0, 0%, 0%);
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-text-wrapper.items {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  position: relative;
+  bottom: 0;
+  right: 0;
 }
 
 .border-box > p {
@@ -74,14 +89,14 @@ header {
 
 .flex-display {
   width: 800px;
-  height: 300px;
+  height: 388px;
   margin: auto;
   position: relative;
 }
 
 .flexbox {
   height: 370px;
-  width: 640px;
+  width: 750px;
   margin: 65px auto 80px;
   display: flex;
   border: solid 8px hsl(0,0%,0%);
@@ -97,7 +112,7 @@ header {
   height: 50px;
   display: block;
   position: absolute;
-  right: -10px;
+  right: -70px;
   top: -9px;
   border: solid 5px hsl(0,0%,0%);
 }
@@ -107,7 +122,7 @@ header {
   height: 50px;
   display: block;
   position: absolute;
-  right: -10px;
+  right: -70px;
   top: 50px;
   border: solid 5px hsl(0,0%,0%);
 }
