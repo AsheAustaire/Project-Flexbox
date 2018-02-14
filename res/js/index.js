@@ -8,13 +8,7 @@ const addBox = document.body.querySelector('#add-box');
 const toggleButton = document.body.querySelector('#button-display');
 const toggleDirection = document.body.querySelector('#button-flex-direction');
 const toggleReverse = document.body.querySelector('#button-toggle-reverse');
-const toggleWrap = document.body.querySelector('#button-flex-wrap');
 const toggleWrapReverse = document.body.querySelector('#button-flex-wrap-reverse');
-const toggleAlignStart = document.body.querySelector('#align-start');
-const toggleAlignEnd = document.body.querySelector('#align-end');
-const toggleAlignCenter = document.body.querySelector('#align-center');
-const toggleAlignBaseline = document.body.querySelector('#align-baseline');
-const toggleAlignStretch = document.body.querySelector('#align-stretch');
 const toggleAlignContStart = document.body.querySelector('#align-cont-start');
 const toggleAlignContEnd = document.body.querySelector('#align-cont-end');
 const toggleAlignContCenter = document.body.querySelector('#align-cont-center');
@@ -25,6 +19,24 @@ const orderInput = document.body.querySelector('#order-input')
 const orderSubmit = document.body.querySelector('#order-submit')
 
 // I have changed the way I want to organize my selected items.
+
+const displayObj = {
+  'toggle': document.body.querySelector('#button-display'),
+  'textDisplay': document.body.querySelector('#text-display'),
+  'counter': 1
+}
+
+const flexDirectionObj = {
+  'toggle': document.body.querySelector('#button-flex-direction'),
+  'textDisplay': document.body.querySelector('#text-flex-direction'),
+  'counter': 1
+}
+
+const flexWrapObj = {
+  'toggle': document.body.querySelector('#button-flex-wrap'),
+  'textDisplay': document.body.querySelector('#text-flex-wrap'),
+  'counter': 1
+}
 
 const justifyContentObj = {
   'toggle': document.body.querySelector('#button-justify-content'),
@@ -137,66 +149,59 @@ flexbox.addEventListener('click', (e) => {
     return currentBoxHTML
   }
 
+// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++\
+// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
+// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
+// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
+// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
+// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
+// =====================+++++++=====+++++=====++++++++++=======++++====+++++===++++++++
 
+// FLEX DISPLAY
+displayObj.toggle.addEventListener('click', () => {
+displayCycle()
+})
 
-// CSS EVENT LISTENERS //
-toggleButton.addEventListener('click', () => {
+function displayCycle() {
   if(flexbox.style.display === 'block') {
     flexbox.style.display = 'flex'
-    flexTextObj.display.innerText = 'display : flex'
   } else {
     flexbox.style.display = 'block';
-    flexTextObj.display.innerText = 'display : block'
   }
+  displayObj.textDisplay.innerText = `display : ${flexbox.style.display}`
+}
 
+//FLEX DIRECTION
 
-})
-
-toggleDirection.addEventListener('click', () => {
+flexDirectionObj.toggle.addEventListener('click', () => {
   if(flexbox.style.flexDirection === 'column') {
     flexbox.style.flexDirection = 'row'
-    flexTextObj.direction.innerText = 'flex-direction : row'
   } else {
     flexbox.style.flexDirection = 'column'
-    flexTextObj.direction.innerText = 'flex-direction : column'
   }
+  flexDirectionObj.textDisplay.innerText = `flex-direction : ${flexbox.style.flexDirection}`
 })
 
-toggleReverse.addEventListener('click', () => {
-  if(flexbox.style.flexDirection === 'row' || flexbox.style.flexDirection === 'row-reverse' || flexbox.style.flexDirection === '') {
-    flexbox.style.flexDirection === 'row-reverse' ? flexbox.style.flexDirection = 'row' : flexbox.style.flexDirection = 'row-reverse';
-    flexTextObj.direction.innerText === 'flex-direction : row' ? flexTextObj.direction.innerText = 'flex-direction : row-reverse' : flexTextObj.direction.innerText = 'flex-direction : row'
-  } else {
-    flexbox.style.flexDirection === 'column' ? flexbox.style.flexDirection = 'column-reverse' : flexbox.style.flexDirection = 'column';
-    flexTextObj.direction.innerText === 'flex-direction : column' ? flexTextObj.direction.innerText = 'flex-direction : column-reverse' : flexTextObj.direction.innerText = 'flex-direction : column'
-  }
+// FLEX WRAP
+flexbox.style.flexWrap = 'nowrap'
+
+flexWrapObj.toggle.addEventListener('click', () => {
+  flexWrapCycle()
 })
 
-toggleWrap.addEventListener('click', () => {
-  if(flexbox.style.flexWrap === 'wrap') {
-    flexbox.style.flexWrap = 'nowrap'
-    flexTextObj.wrap.innerText = 'flex-wrap : nowrap'
-  } else {
+function flexWrapCycle() {
+  if(flexbox.style.flexWrap === 'nowrap') {
     flexbox.style.flexWrap = 'wrap'
-    flexTextObj.wrap.innerText = 'flex-wrap : wrap'
+  } else if (flexbox.style.flexWrap === 'wrap') {
+    flexbox.style.flexWrap = 'wrap-reverse'
+  } else if (flexbox.style.flexWrap === 'wrap-reverse') {
+    flexbox.style.flexWrap = 'nowrap'
   }
-})
+  flexWrapObj.textDisplay.innerText = `flex-wrap : ${flexbox.style.flexWrap}`
+}
 
-toggleWrapReverse.addEventListener('click', () => {
-
-  if(flexbox.style.flexWrap === 'wrap') {
-    flexbox.style.flexwrap = 'wrap-reverse';
-    console.log('test');
-  } else if (flexbox.style.flexWrap === 'nowrap') {
-    console.log('Set Flexbox Container to Wrap First');
-  } else if (flexbox.style.flexwrap === 'wrap-reverse' ) {
-    flexbox.style.flextwrap = 'wrap'
-  } else {
-  }
-})
 
 // JUSTIFY CONTENT
-
 justifyContentObj.toggle.addEventListener('click', () => {
   justifyContentCycle()
 })
@@ -262,31 +267,42 @@ function alignItemsCycle() {
 }
 // ALIGN CONTENT MENU
 
-toggleAlignContStart.addEventListener('click', () => {
-  flexbox.style.alignContent = 'flex-start'
-  flexTextObj.alignContent.innerText = 'align-content : flex-start'
-})
-toggleAlignContEnd.addEventListener('click', () => {
-  flexbox.style.alignContent = 'flex-end'
-  flexTextObj.alignContent.innerText = 'align-content : flex-end'
-})
-toggleAlignContCenter.addEventListener('click', () => {
-  flexbox.style.alignContent = 'center'
-  flexTextObj.alignContent.innerText = 'align-content : center'
-})
-toggleAlignContStretch.addEventListener('click', () => {
-  flexbox.style.alignContent = 'stretch'
-  flexTextObj.alignContent.innerText = 'align-content : stretch'
-})
-toggleAlignContBetween.addEventListener('click', () => {
-  flexbox.style.alignContent = 'space-between'
-  flexTextObj.alignContent.innerText = 'align-content : space-between'
-})
-toggleAlignContAround.addEventListener('click', () => {
-  flexbox.style.alignContent = 'space-around'
-  flexTextObj.alignContent.innerText = 'align-content : space-around'
+alignContentObj.toggle.addEventListener('click', () => {
+  alignContentCycle()
 })
 
+function alignContentCycle() {
+  switch(alignContentObj.counter) {
+    case 0 :
+      flexbox.style.alignContent = 'flex-start'
+      alignContentObj.counter += 1
+      break;
+    case 1:
+      flexbox.style.alignContent = 'flex-end'
+      alignContentObj.counter += 1
+      break;
+    case 2:
+      flexbox.style.alignContent = 'center'
+      alignContentObj.counter += 1
+      break;
+    case 3:
+      flexbox.style.alignContent = 'stretch'
+      alignContentObj.counter += 1
+      break;
+    case 4:
+      flexbox.style.alignContent = 'space-between'
+      alignContentObj.counter += 1
+      break;
+    case 5:
+      flexbox.style.alignContent = 'space-around'
+      alignContentObj.counter += 1
+      break;
+    case 6:
+      break;
+  }
+  alignContentObj.textDisplay.innerText = `align-content : ${flexbox.style.alignContent}`;
+  alignContentObj.counter === 6 ? alignContentObj.counter = 0 : false;
+}
 // ORDER MENU
 
 orderSubmit.addEventListener('click', (e) => {
