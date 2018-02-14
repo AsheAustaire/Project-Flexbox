@@ -23,8 +23,22 @@
         </section>
         <section class='flex-text-wrapper items'>
           <div id='flex-container-properties' class='border-box'>
-        </section>
+            <p>Change Order</p>
+            <input id='order-input' type='text' name='' value='enter a number'/>
+            <button id='order-submit' type='button' name='button'>submit</button>
+            <h1>Flex Grow & Flex Shrink</h1>
+            <section class='sub-buttons'>
+              <p>Flex Basis</p>
+              <input id='basis-input' type="text" name="basis" value="">
+            <button id='basis-submit' type='button' name='button'>submit</button>
+              <p>Flex Grow</p>
+              <input id='grow-input' type="text" name="grow" value="">
+            <button id='grow-submit' type='button' name='button'>submit</button>
+            <p>Flex Shrink</p>
+            <input id='shrink-input' type="text" name="shrink" value="">
+          <button id='shrink-submit' type='button' name='button'>submit</button>
           </div>
+        </section>
           <section class='flex-text-wrapper items random'>
             <div id='flex-container-properties' class='border-box'>
               <section class='text-tile'>
@@ -32,6 +46,8 @@
             </div>
           </section>
           <section class='flex-text-wrapper items slider'>
+          </section>
+          <section class='flex-text-wrapper items random-left'>
           </section>
         </section>
       <section class='flex-text-wrapper'>
@@ -63,52 +79,6 @@
         </div>
       </section>
     </header>
-    <main>
-      <article class='buttonContainer'>
-           <h1 class='menu-header'>Flex-Item Properties</h1>
-            <section>
-              <div class='button-menu main-button'>
-                <button id='button-display'class='button' type="button">Toggle FlexBox</button>
-              </div>
-            </section>
-              <section class='sub-button-wrapper'>
-                <div class='button-menu sub'>
-                  <h1>Order</h1>
-                  <section class='sub-buttons'>
-                    <div class='order-wrapper'>
-                      <p>Change Order</p>
-                      <input id='order-input' type='text' name='' value='enter a number'/>
-                      <button id='order-submit' type='button' name='button'>submit</button>
-                    </div>
-                  </section>
-                </div>
-                <div class='button-menu sub'>
-                  <h1>Align Self</h1>
-                  <section class='sub-buttons'>
-                    <button id='align-self-start'class='button' type="button">Flex Start</button>
-                    <button id='align-self-end'class='button' type="button">Flex End</button>
-                    <button id='align-self-center'class='button' type="button">Center</button>
-                    <button id='align-self-baseline'class='button' type="button">BaseLine</button>
-                    <button id='align-self-stretch'class='button' type="button">Stretch</button>
-                  </section>
-                </div>
-                <div class='button-menu sub'>
-                  <h1>Flex Grow & Flex Shrink</h1>
-                  <section class='sub-buttons'>
-                    <p>Flex Basis</p>
-                    <input id='basis-input' type="text" name="basis" value="">
-                  <button id='basis-submit' type='button' name='button'>submit</button>
-                    <p>Flex Grow</p>
-                    <input id='grow-input' type="text" name="grow" value="">
-                  <button id='grow-submit' type='button' name='button'>submit</button>
-                  <p>Flex Shrink</p>
-                  <input id='shrink-input' type="text" name="shrink" value="">
-                <button id='shrink-submit' type='button' name='button'>submit</button>
-                  </section>
-                </div>
-              </section>
-      </article>
-    </main>
     <script src='res/js/index.js'></script>
   </body>
 </html>

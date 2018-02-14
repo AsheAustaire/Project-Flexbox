@@ -73,22 +73,32 @@ header {
   right: -280px;
 }
 
+.flex-text-wrapper.items.random-left {
+  width: 330px;
+  height: 654px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: -346px;
+}
+
+
 .flex-text-wrapper.items.slider {
   width: 3px;
   height: 255px;
   margin: 0;
   position: absolute;
-  top: 272px;
-  right: 182px;
+  top: 122px;
+  right: -38px;
 }
 
 .flex-text-wrapper.items.random {
-  width: 3px;
-  height: 255px;
+  width: 250px;
+  height: 250px;
   margin: 0;
   position: absolute;
-  top: 272px;
-  right: 182px;
+  top: 403px;
+  right: -280px;
 }
 
 .border-box > p {
@@ -113,7 +123,7 @@ header {
 }
 
 .flexbox {
-  height: 370px;
+  height: 392px;
   width: 750px;
   margin: 65px auto 80px;
   display: flex;
