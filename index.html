@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>                            77755
   <head>
     <meta charset="utf-8">
     <link rel='stylesheet' href='https://nackloose.com/reset.css' />
@@ -7,78 +7,68 @@
     <link rel='stylesheet' href='res/css/slider.css'/ />
   </head>
   <body>
-    <header>
-      <h1 class='text-header'><span class='flex-text'>FLEX</span>BOX</h1>
-      <section class='flex-display'>
-        <section id='flexbox' class='flexbox'>
-          <div id='box1' class='box red' tabindex="0"></div>
-          <div id='box2' class='box green' tabindex="0"></div>
-          <div id='box3' class='box blue' tabindex="0"></div>
-          <div id='box4' class='box purple' tabindex="0"></div>
-          <div id='box5' class='box orange' tabindex="0"></div>
+    <main>
+      <h1 class='logo'><span class='logo-span'>FLEX</span>BOX</h1>
+      <article class='content-wrapper'>
+        <section class='column left'>
         </section>
-        <section class='flex-display-buttons'>
-          <button id='add-box' class='button add' type='button'>+</button>
-          <button id='remove-box' class='button remove' type='button'>-</button>
+        <section class='column center'>
+          <section id='flexbox' class='flexbox'>
+            <div id='box1' class='box red' tabindex="0"></div>
+            <div id='box2' class='box green' tabindex="0"></div>
+            <div id='box3' class='box blue' tabindex="0"></div>
+            <div id='box4' class='box purple' tabindex="0"></div>
+            <div id='box5' class='box orange' tabindex="0"></div>
+          </section>
+          <section id='flex-container-properties' class='border-box properties-container'>
+            <section class='text-tile'>
+              <button id='button-display' class='css-display-button'></button>
+              <p id='text-display' class='flex-declaration'>display : flex</p>
+            </section>
+            <section class='text-tile'>
+              <button id='button-flex-wrap' class='css-display-button'></button>
+              <p id='text-flex-wrap' class='flex-declaration'>flex-wrap : wrap</p>
+            </section>
+            <section class='text-tile'>
+              <button id='button-flex-direction' class='css-display-button'></button>
+              <p id='text-flex-direction' class='flex-declaration'>flex-direction : row</p>
+            </section>
+            <section class='text-tile'>
+              <button id='button-justify-content' class='css-display-button'></button>
+              <p id='text-justify-content' class='flex-declaration'>justify-content : flex-start</p>
+            </section>
+            <section class='text-tile'>
+              <button id='button-align-items' class='css-display-button'></button>
+              <p id='text-align-items' class='flex-declaration'>align-items : flex-start</p>
+            </section>
+            <section class='text-tile'>
+              <button id='button-align-content' class='css-display-button'></button>
+              <p id='text-align-content' class='flex-declaration'>align-content : stretch</p>
+            </section>
+          </section>
         </section>
-        <section class='flex-text-wrapper items'>
-          <div id='flex-container-properties' class='border-box'>
+        <section class='column right'>
+          <section class='add-remove-buttons'>
+            <button id='add-box' class='button add' type='button'>+</button>
+            <button id='remove-box' class='button remove' type='button'>-</button>
+          </section>
+          <section class='border-box properties-item'>
             <p>Change Order</p>
             <input id='order-input' type='text' name='' value='enter a number'/>
             <button id='order-submit' type='button' name='button'>submit</button>
             <h1>Flex Grow & Flex Shrink</h1>
-            <section class='sub-buttons'>
-              <p>Flex Basis</p>
-              <input id='basis-input' type="text" name="basis" value="">
+            <p>Flex Basis</p>
+            <input id='basis-input' type="text" name="basis" value="">
             <button id='basis-submit' type='button' name='button'>submit</button>
-              <p>Flex Grow</p>
-              <input id='grow-input' type="text" name="grow" value="">
+            <p>Flex Grow</p>
+            <input id='grow-input' type="text" name="grow" value="">
             <button id='grow-submit' type='button' name='button'>submit</button>
             <p>Flex Shrink</p>
             <input id='shrink-input' type="text" name="shrink" value="">
-          <button id='shrink-submit' type='button' name='button'>submit</button>
-          </div>
+            <button id='shrink-submit' type='button' name='button'>submit</button>
         </section>
-          <section class='flex-text-wrapper items random'>
-            <div id='flex-container-properties' class='border-box'>
-              <section class='text-tile'>
-              </section>
-            </div>
-          </section>
-          <section class='flex-text-wrapper items slider'>
-          </section>
-          <section class='flex-text-wrapper items random-left'>
-          </section>
-        </section>
-      <section class='flex-text-wrapper'>
-        <div id='flex-container-properties' class='border-box'>
-          <section class='text-tile'>
-            <button id='button-display' class='css-display-button'></button>
-            <p id='text-display' class='flex-declaration'>display : flex</p>
-          </section>
-          <section class='text-tile'>
-            <button id='button-flex-wrap' class='css-display-button'></button>
-            <p id='text-flex-wrap' class='flex-declaration'>flex-wrap : wrap</p>
-          </section>
-          <section class='text-tile'>
-            <button id='button-flex-direction' class='css-display-button'></button>
-            <p id='text-flex-direction' class='flex-declaration'>flex-direction : row</p>
-          </section>
-          <section class='text-tile'>
-            <button id='button-justify-content' class='css-display-button'></button>
-            <p id='text-justify-content' class='flex-declaration'>justify-content : flex-start</p>
-          </section>
-          <section class='text-tile'>
-            <button id='button-align-items' class='css-display-button'></button>
-            <p id='text-align-items' class='flex-declaration'>align-items : flex-start</p>
-          </section>
-          <section class='text-tile'>
-            <button id='button-align-content' class='css-display-button'></button>
-            <p id='text-align-content' class='flex-declaration'>align-content : stretch</p>
-          </section>
-        </div>
-      </section>
-    </header>
+      </article>
+    </main>
     <script src='res/js/index.js'></script>
   </body>
 </html>
