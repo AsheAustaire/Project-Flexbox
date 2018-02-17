@@ -24,7 +24,7 @@ h1 {
 }
 
 .column {
-  height: 677px;
+  height: 643px;
   flex-flow: column nowrap;
   border: solid 5px hsl(0,0%,0%);
 }
@@ -34,6 +34,10 @@ h1 {
 }
 
 .column.left {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
   width: 200px;
 }
 
@@ -222,4 +226,24 @@ h1 {
 
 .box.blue {
   background: blue;
+}
+
+/*  LEFT COLUMN
+====================*/
+
+.column-left-box {
+  width: 211px;
+  height: 211px;
+}
+
+.column-left-box.red {
+  background: hsl(0, 50%, 50%);
+}
+
+.column-left-box.blue {
+  background: hsl(50, 50%, 50%);
+}
+
+.column-left-box.yellow {
+  background: hsl(100, 50%, 50%);
 }
