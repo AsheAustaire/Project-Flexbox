@@ -323,8 +323,9 @@ function alignContentCycle() {
 // ORDER MENU
 
 order.orderSubmit.addEventListener('click', (e) => {
-  console.log(e.target.value);
   currentTarget.style.order = parseInt(order.orderInput.value) ;
+  currentTarget.innerText = order.orderInput.value;
+  order.orderInput.value = '';
 })
 
 // ALIGN SELF MENU
@@ -347,8 +348,9 @@ alignItemObj.stretch.addEventListener('click', () => {
 
 // FLEX GROW AND SHRINK AND BASIS MENU
 
-flexGrowObj.submit.addEventListener('click', () => {
+flexGrowObj.submit.addEventListener('click', (e) => {
   currentTarget.style.flexGrowObj = flexGrowObj.input.value
+  console.log(e.target.value);
 })
 
 

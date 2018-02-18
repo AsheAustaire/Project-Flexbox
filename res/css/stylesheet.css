@@ -18,7 +18,7 @@ h1 {
   display: flex;
   justify-content: space-around;
   width: 1460px;
-  height: 900px;
+  height: 654px;
   margin: auto;
   /* overflow: hidden; */
 }
@@ -64,6 +64,7 @@ h1 {
 
 .border-box.properties-item {
   display: flex;
+  justify-content: center;
   position: relative;
   top: 8px;
   width: 385px;
@@ -80,7 +81,7 @@ h1 {
   align-content: center;
   flex-flow: column wrap;
   height: 150px;
-  width: 100%;
+  width: 644px;
 }
 
 .cont-item-wrapper {padding: 20px;padding-top: 0px;}
@@ -103,7 +104,8 @@ h1 {
 }
 
 .text-tile {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin: 10px 0;
   width: 322px;
 }
@@ -123,18 +125,27 @@ h1 {
 }
 
 .input {
-  height: 10px;
+  height: 20px;
   width: 30px;
+  margin-right: 9px;
 }
 
 .submit {
   height: 27px;
   width: 30px;
   background: hsl(0,0%,0%);
+  border-radius: 50px;
+}
+
+.input-submit-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .submit.properties {
   display: inline-block;
+  border-radius: 100px;
+  margin-right: 10px;
 }
 
 /*  BUTTONS
@@ -151,7 +162,7 @@ h1 {
   width: 100px;
   height: 100px;
   margin: 10px;
-  font: 15px sans-serif;
+  font: 34px sans-serif;
   border: solid 5px hsl(0,0%,0%);
   outline: none;
 }
@@ -195,9 +206,9 @@ h1 {
 ====================*/
 
 .flexbox {
-  height: 392px;
+  height: 387px;
   width: 750px;
-  margin: 0 auto 30px;
+  margin: 0 auto 36px;
   display: flex;
   border: solid 8px hsl(0,0%,0%);
   flex-wrap: nowrap;
@@ -230,9 +241,13 @@ h1 {
 }
 
 .box {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   width: 75px;
   height: 75px;
   box-sizing: border-box;
+  font: bolder 51px Poppins;
 }
 
 .box:hover {
@@ -276,14 +291,24 @@ h1 {
 
 .column-left-box.red {
   background: hsl(0, 50%, 50%);
+  background-image: url(../img/git-logo.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
 }
 
 .column-left-box.blue {
   background: hsl(50, 50%, 50%);
+  background-image: url(../img/so-logo.png);
+  background-size: 105px;
+  background-repeat: no-repeat;
+  background-position: left -7px top -10px;
 }
 
 .column-left-box.yellow {
   background: hsl(100, 50%, 50%);
+  background-image: url(../img/profile-logo.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
 }
 
 /*  RIGHT COLUMN
@@ -308,9 +333,9 @@ h1 {
   justify-content:  center;
   align-items: center;
   width: 237px;
-  height: 134px;
-  padding: 47px;
-  font: bolder 11px 'Poppins';
+  height: 154px;
+  padding: 36px;
+  font: bolder 12px 'Poppins';
   color: hsl(0,100%,100%);
   text-align: justify;
   background: hsl(0,0%,0%);
@@ -319,4 +344,8 @@ h1 {
 .column-right-top-wrapper {
   display: flex;
   height: 226px;
+}
+
+.cont-item-wrapper p {
+  margin: 10px 0px;
 }
