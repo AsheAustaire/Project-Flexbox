@@ -17,16 +17,16 @@ h1 {
 .content-wrapper {
   display: flex;
   justify-content: space-around;
-  width: 1500px;
+  width: 1460px;
   height: 900px;
   margin: auto;
   /* overflow: hidden; */
 }
 
+
 .column {
-  height: 643px;
-  flex-flow: column nowrap;
-  border: solid 5px hsl(0,0%,0%);
+  height: 654px;
+  /* border: solid 5px hsl(0,0%,0%); */
 }
 
 .column.center {
@@ -49,12 +49,13 @@ h1 {
   display: flex;
   flex-flow: column wrap;
   font: 20px 'Josefin Slab';
-  border: solid 5px hsl(0,0%,0%)
+  border: solid 7px hsl(0,0%,0%);
 }
 
 .border-box.properties-container {
   display: flex;
-  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
   width: 756px;
   height: 200px;
   margin: auto;
@@ -63,13 +64,30 @@ h1 {
 
 .border-box.properties-item {
   display: flex;
-  flex-flow: column wrap;
-  width: 100%;
-  height: 369px;
+  position: relative;
+  top: 8px;
+  width: 385px;
+  height: 386px;
   margin-top: 20px;
   font: 20px 'Josefin Slab';
 }
 
+.cont-prop-wrapper {
+  display: flex;
+  padding-left: 75px;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+  height: 150px;
+  width: 100%;
+}
+
+.cont-item-wrapper {padding: 20px;padding-top: 0px;}
+
+.flex-declaration {
+  display:inline-block;
+}
 
 /*  LOGO && TEXT
 ====================*/
@@ -77,18 +95,24 @@ h1 {
 .logo {
   font: 60px Poppins;
   text-align: center;
-  padding: 30px
+  padding: 30px;
 }
 
 .logo-span {
   font-weight: 600;
 }
 
-/* .text-tile {
-  display: flex;
-  align-items: center;
-  padding: 0px
-} */
+.text-tile {
+  display: inline-block;
+  margin: 10px 0;
+  width: 322px;
+}
+
+.text-tile.item {
+  display: block;
+  margin: 24px 0;
+  width: 322px;
+}
 
 /*  INPUT BOXES
 ====================*/
@@ -96,6 +120,21 @@ h1 {
 .button-menu > button {
   height: 100px;
   width: 100px;
+}
+
+.input {
+  height: 10px;
+  width: 30px;
+}
+
+.submit {
+  height: 27px;
+  width: 30px;
+  background: hsl(0,0%,0%);
+}
+
+.submit.properties {
+  display: inline-block;
 }
 
 /*  BUTTONS
@@ -170,26 +209,24 @@ h1 {
 
 .button.add {
   display: block;
-  width: 50px;
-  height: 50px;
-  border: solid 5px hsl(0,0%,0%);
+  width: 75px;
+  height: 75px;
+  margin: 0;
+  border: solid 7px hsl(0,0%,0%);
 }
 
 .button.remove {
   display: block;
-  width: 50px;
-  height: 50px;
-  border: solid 5px hsl(0,0%,0%);
+  width: 75px;
+  height: 141px;
+  margin: 10px 0 0;
+  border: solid 7px hsl(0,0%,0%);
 }
 
 .add-remove-buttons {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 240px;
-  border: solid 5px hsl(0,0%,0%);
+  display: inline-block;
+  width: 75px;
+  height: 160px;
 }
 
 .box {
@@ -232,8 +269,9 @@ h1 {
 ====================*/
 
 .column-left-box {
-  width: 211px;
-  height: 211px;
+  width: 200px;
+  height: 200px;
+  border: solid 5px hsl(0,0%,0%);
 }
 
 .column-left-box.red {
@@ -246,4 +284,39 @@ h1 {
 
 .column-left-box.yellow {
   background: hsl(100, 50%, 50%);
+}
+
+/*  RIGHT COLUMN
+====================*/
+
+.column-right-box {
+  display: inline-block;
+  width: 8px;
+  height: 100px;
+}
+
+.column-right-box.slider {
+  display: inline-block;
+  width: 8px;
+  height: 226px;
+  margin: 0 36px;
+  background: black;
+}
+
+.column-right-box.text {
+  display: inline-flex;
+  justify-content:  center;
+  align-items: center;
+  width: 237px;
+  height: 134px;
+  padding: 47px;
+  font: bolder 11px 'Poppins';
+  color: hsl(0,100%,100%);
+  text-align: justify;
+  background: hsl(0,0%,0%);
+}
+
+.column-right-top-wrapper {
+  display: flex;
+  height: 226px;
 }

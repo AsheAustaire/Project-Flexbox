@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>                            77755
+<html>
   <head>
     <meta charset="utf-8">
     <link rel='stylesheet' href='https://nackloose.com/reset.css' />
@@ -24,51 +24,66 @@
             <div id='box5' class='box orange' tabindex="0"></div>
           </section>
           <section id='flex-container-properties' class='border-box properties-container'>
-            <section class='text-tile'>
-              <button id='button-display' class='css-display-button'></button>
+            <div class='cont-prop-wrapper'>
+            <section class='text-tile properties'>
+              <button id='button-display' class='submit properties'></button>
               <p id='text-display' class='flex-declaration'>display : flex</p>
             </section>
-            <section class='text-tile'>
-              <button id='button-flex-wrap' class='css-display-button'></button>
+            <section class='text-tile properties'>
+              <button id='button-flex-wrap' class='submit properties'></button>
               <p id='text-flex-wrap' class='flex-declaration'>flex-wrap : wrap</p>
             </section>
-            <section class='text-tile'>
-              <button id='button-flex-direction' class='css-display-button'></button>
+            <section class='text-tile properties'>
+              <button id='button-flex-direction' class='submit properties'></button>
               <p id='text-flex-direction' class='flex-declaration'>flex-direction : row</p>
             </section>
-            <section class='text-tile'>
-              <button id='button-justify-content' class='css-display-button'></button>
+            <section class='text-tile properties'>
+              <button id='button-justify-content' class='submit properties'></button>
               <p id='text-justify-content' class='flex-declaration'>justify-content : flex-start</p>
             </section>
-            <section class='text-tile'>
-              <button id='button-align-items' class='css-display-button'></button>
+            <section class='text-tile properties'>
+              <button id='button-align-items' class='submit properties'></button>
               <p id='text-align-items' class='flex-declaration'>align-items : flex-start</p>
             </section>
-            <section class='text-tile'>
-              <button id='button-align-content' class='css-display-button'></button>
+            <section class='text-tile properties'>
+              <button id='button-align-content' class='submit properties'></button>
               <p id='text-align-content' class='flex-declaration'>align-content : stretch</p>
             </section>
+          </div>
           </section>
         </section>
         <section class='column right'>
-          <section class='add-remove-buttons'>
-            <button id='add-box' class='button add' type='button'>+</button>
-            <button id='remove-box' class='button remove' type='button'>-</button>
-          </section>
+          <div class='column-right-top-wrapper'>
+            <section class='add-remove-buttons'>
+              <button id='add-box' class='button add' type='button'>+</button>
+              <button id='remove-box' class='button remove' type='button'>-</button>
+            </section>
+            <div class='column-right-box slider'></div>
+            <div class='column-right-box text'> This is a flex-box sandbox. Use the interface to add, remove, and modify the colorful div elements within the flex-box provided. I hope this app can help you through your development journey. Any support or feedback is appreciated. </div>
+          </div>
           <section class='border-box properties-item'>
-            <p>Change Order</p>
-            <input id='order-input' type='text' name='' value='enter a number'/>
-            <button id='order-submit' type='button' name='button'>submit</button>
-            <h1>Flex Grow & Flex Shrink</h1>
-            <p>Flex Basis</p>
-            <input id='basis-input' type="text" name="basis" value="">
-            <button id='basis-submit' type='button' name='button'>submit</button>
-            <p>Flex Grow</p>
-            <input id='grow-input' type="text" name="grow" value="">
-            <button id='grow-submit' type='button' name='button'>submit</button>
-            <p>Flex Shrink</p>
-            <input id='shrink-input' type="text" name="shrink" value="">
-            <button id='shrink-submit' type='button' name='button'>submit</button>
+            <div class='cont-item-wrapper'>
+              <section class='text-tile item'>
+              <p>Change Order :</p>
+              <input id='order-input' class='input order' type='text' name='' value=''/>
+              <button id='order-submit' class='input submit' type='button' name='button'></button>
+              </section>
+            <section class='text-tile item'>
+              <p>Flex Basis :</p>
+              <input id='basis-input' class='input basis' type="text" name="basis" value="">
+              <button id='basis-submit item' class='submit basis' type='button' name='button'></button>
+              </section>
+              <section class='text-tile item'>
+              <p>Flex Grow :</p>
+              <input id='grow-input' class='input grow' type="text" name="grow" value="">
+              <button id='grow-submit' class='submit grow' type='button' name='button'></button>
+            </section>
+              <section class='text-tile item'>
+              <p>Flex Shrink :</p>
+              <input id='shrink-input' class='input shrink' type="text" name="shrink" value="">
+              <button id='shrink-submit' class='submit shrink' type='button' name='button'></button>
+              </section>
+            </div>
         </section>
       </article>
     </main>
