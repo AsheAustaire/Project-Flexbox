@@ -20,7 +20,7 @@ let currentTarget = 'none';
 flexbox.innerHTML = flexbox.innerHTML.replace(/\s+$/, ''); // White Space Fix
 
 boxTools.addBox.addEventListener('click', (e) => {
-  if(boxCounter < 70){
+  if(boxCounter < 50){
     boxCounter += 1;
     flexbox.innerHTML += addBoxHTML(boxCounter);
   } else {
@@ -37,13 +37,6 @@ boxTools.removeBox.addEventListener('click', () => {
     console.log('cannot remove anymore boxes');
   }
   })
-
-  //select the flexbox item
-flexbox.addEventListener('click', (e) => {
-  if(e.target.tabIndex === 0)
-  currentTarget = e.target
-})
-
 
 // FLEX-BOX HELPER FUNCTIONS //
 
@@ -131,30 +124,35 @@ const alignContentObj = {
 //===========================================
 
 const order = {
+    'textDisplay': document.body.querySelector('#text-order'),
     'orderInput': document.body.querySelector('#order-input'),
     'orderSubmit': document.body.querySelector('#order-submit')
 }
 
-const alignItemObj = {
-  'start' : document.body.querySelector('#align-self-start'),
-  'end' : document.body.querySelector('#align-self-end'),
-  'center' : document.body.querySelector('#align-self-center'),
-  'baseline' : document.body.querySelector('#align-self-baseline'),
-  'stretch' : document.body.querySelector('#align-self-stretch'),
+const alignSelfObj = {
+  'textDisplay': document.body.querySelector('#text-align-self'),
+  'start' : document.body.querySelector('#button-align-self-flex-start'),
+  'end' : document.body.querySelector('#button-align-self-flex-end'),
+  'center' : document.body.querySelector('#button-align-self-center'),
+  'baseline' : document.body.querySelector('#button-align-self-baseline'),
+  'stretch' : document.body.querySelector('#button-align-self-stretch'),
 }
 
 const flexGrowObj= {
+  'textDisplay': document.body.querySelector('#text-grow'),
   'submit' : document.body.querySelector('#grow-submit'),
   'input' : document.body.querySelector('#grow-input')
 }
 
 const flexShrinkObj = {
+  'textDisplay': document.body.querySelector('#text-shrink'),
   'submit' : document.body.querySelector('#shrink-submit'),
   'input' : document.body.querySelector('#shrink-input')
 }
 
 const flexBasisObj = {
-  'submit' : document.body.querySelector('#basis-submit'),
+  'textDisplay': document.body.querySelector('#text-basis'),
+  'submit' : document.body.querySelector('#submit-basis'),
   'input' : document.body.querySelector('#basis-input')
 }
 
@@ -167,6 +165,19 @@ const flexBasisObj = {
 
 
 // FLEX DISPLAY
+
+//select the flexbox item
+flexbox.addEventListener('click', (e) => {
+if(e.target.tabIndex === 0) {
+  currentTarget = e.target;
+  flexBasisObj.textDisplay.innerText = `flex-basis : ${currentTarget.style.flexBasis}`;
+  flexGrowObj.textDisplay.innerText = `flex-grow : ${currentTarget.style.flexGrow}`
+  flexShrinkObj.textDisplay.innerText = `flex-shrink : ${currentTarget.style.flexShrink}`
+  alignSelfObj.textDisplay.innerText = `align-self : ${currentTarget.style.alignSelf}`
+  order.textDisplay.innerText = `order : ${currentTarget.style.order}`
+}
+})
+
 displayObj.toggle.addEventListener('click', () => {
 displayCycle()
 })
@@ -311,7 +322,7 @@ function alignContentCycle() {
   }
   alignContentObj.textDisplay.innerText = `align-content : ${flexbox.style.alignContent}`;
   alignContentObj.counter === 6 ? alignContentObj.counter = 0 : false;
-}
+  }
 
 //===========================================
 //===========================================
@@ -330,34 +341,37 @@ order.orderSubmit.addEventListener('click', (e) => {
 
 // ALIGN SELF MENU
 
-alignItemObj.start.addEventListener('click', () => {
+alignSelfObj.start.addEventListener('click', () => {
   currentTarget.style.alignSelf = 'flex-start';
+
 })
-alignItemObj.end.addEventListener('click', () => {
+alignSelfObj.end.addEventListener('click', () => {
   currentTarget.style.alignSelf = 'flex-end';
 })
-alignItemObj.center.addEventListener('click', () => {
+alignSelfObj.center.addEventListener('click', () => {
   currentTarget.style.alignSelf = 'center';
 })
-alignItemObj.baseline.addEventListener('click', () => {
+alignSelfObj.baseline.addEventListener('click', () => {
   currentTarget.style.alignSelf = 'baseline';
 })
-alignItemObj.stretch.addEventListener('click', () => {
+alignSelfObj.stretch.addEventListener('click', () => {
   currentTarget.style.alignSelf = 'stretch';
 })
 
 // FLEX GROW AND SHRINK AND BASIS MENU
 
-flexGrowObj.submit.addEventListener('click', (e) => {
-  currentTarget.style.flexGrowObj = flexGrowObj.input.value
-  console.log(e.target.value);
+flexBasisObj.submit.addEventListener('click', () => {
+  console.log('test');
+  currentTarget.style.flexBasis = `${flexBasisObj.input.value}px`;
+  flexBasisObj.input.value = ''
 })
 
+flexGrowObj.submit.addEventListener('click', () => {
+  currentTarget.style.flexGrow = flexGrowObj.input.value;
+  flexGrowObj.input.value = ''
+})
 
 flexShrinkObj.submit.addEventListener('click', () => {
-  currentTarget.style.flexShrinkObj = flexShrinkObj.input.value
-})
-
-flexBasisObj.submit.addEventListener('click', () => {
-  currentTarget.style.flexBasisObj = flexBasisObj.input.value
+  currentTarget.style.flexShrink = flexShrinkObj.input.value;
+  flexShrinkObj.input.value = ''
 })

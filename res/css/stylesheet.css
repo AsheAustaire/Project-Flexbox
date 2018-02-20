@@ -78,7 +78,7 @@ h1 {
 
 .cont-prop-wrapper {
   display: flex;
-  padding-left: 75px;
+  padding-left: 60px;
   position: relative;
   justify-content: center;
   align-content: center;
@@ -87,7 +87,7 @@ h1 {
   width: 644px;
 }
 
-.cont-item-wrapper {padding: 20px;padding-top: 0px;}
+.cont-item-wrapper {display: flex;flex-flow: column wrap;padding: 20px;padding-top: 0px;}
 
 .flex-declaration {
   display:inline-block;
@@ -116,7 +116,13 @@ h1 {
 .text-tile.item {
   display: block;
   margin: 24px 0;
-  width: 322px;
+  width: 180px;
+}
+
+.custom-text {
+  display:
+  position: relative;
+  right: 0px;
 }
 
 /*  INPUT BOXES
@@ -129,16 +135,28 @@ h1 {
 
 .input {
   height: 20px;
-  width: 30px;
+  width: 63px;
   margin-right: 9px;
+  border: solid
 }
 
 .submit {
   height: 27px;
-  width: 30px;
-  background: hsl(0,0%,0%);
+  width: 44px;
+  background: hsl(197,91%,88%);
+  border: solid 2px black;
   border-radius: 50px;
+  outline: none;
 }
+
+.submit:hover {
+  background: hsl(211,80%,70%);
+}
+
+.submit:active {
+  background: hsl(231,68%,67%);
+}
+
 
 .input-submit-wrapper {
   display: flex;
@@ -285,6 +303,8 @@ h1 {
   background: blue;
 }
 
+
+
 /*  LEFT COLUMN
 ====================*/
 
@@ -353,4 +373,15 @@ h1 {
 
 .cont-item-wrapper p {
   margin: 10px 0px;
+}
+
+.text-tile.align-self {
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+.submit.align {
+  width: 150px;
+  margin: 3px;
+  font: bolder 12px Poppins;
 }
